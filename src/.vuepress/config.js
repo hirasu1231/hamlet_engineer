@@ -17,6 +17,11 @@ module.exports = {
         },
     },
 
+    // 言語設定
+    head: [
+        ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Parisienne&display=swap'}],
+      ],
+
     // テーマを指定
     theme: 'meteorlxy',
 
@@ -46,7 +51,7 @@ module.exports = {
             nickname: 'hirasu1231',
 
             // 自己紹介(HYML対応)
-            description: '自己紹介',
+            description: 'ハムレット型：決断を下して行動に移るよりは、 むしろ懐疑や苦悩にこもってしまう思索的な性格．そんな精神療養中の元エンジニアです.',
 
             // 拠点地
             location: 'Fukuoka, Japan',
