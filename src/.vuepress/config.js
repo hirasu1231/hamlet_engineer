@@ -58,7 +58,7 @@ module.exports = {
 
             // アバターの画像
             // Set to external link
-            avatar: '/img/hirasu.jpg',
+            avatar: '/hamlet_engineer/img/hirasu.jpg',
             // `.vuepress/public/img/avatar.jpg`に置く
             // avatar: '/img/avatar.jpg'と記載する
 
