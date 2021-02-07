@@ -17,11 +17,6 @@ module.exports = {
         },
     },
 
-    // 言語設定
-    head: [
-        ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Parisienne&display=swap'}],
-      ],
-
     // テーマを指定
     theme: 'meteorlxy',
 
@@ -144,6 +139,7 @@ module.exports = {
         nav: [
             { text: 'ホーム', link: '/', exact: true },
             { text: '記事検索', link: '/posts/', exact: false },
+            { text: '雑記', link: '/custom-pages/', exact: false },
         ],
 
         // Enable smooth scrolling or not
@@ -165,7 +161,6 @@ module.exports = {
             home: true,
             // Allow theme to add Posts page (url: /posts/)
             posts: true,
-
         },
     },
 }
