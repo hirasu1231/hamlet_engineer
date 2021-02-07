@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vuepressのフォントの設定とページメニューの設定 | ハムレット型エンジニアのカンニングノート</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <meta name="description" content="ハムレット型：決断を下して行動に移るよりは、 むしろ懐疑や苦悩にこもってしまう思索的な性格．そんな元エンジニアの雑記帳です．個人的な趣味全開の実用性皆無なプログラミングを綴っています．">
+    <link rel="preload" href="/hamlet_engineer/assets/css/0.styles.6cfb13ef.css" as="style"><link rel="preload" href="/hamlet_engineer/assets/js/app.3306ee42.js" as="script"><link rel="preload" href="/hamlet_engineer/assets/js/7.5adad686.js" as="script"><link rel="preload" href="/hamlet_engineer/assets/js/9.cdb6f04e.js" as="script"><link rel="prefetch" href="/hamlet_engineer/assets/js/1.290004f2.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/10.14199098.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/11.04aa3825.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/12.5c1bdb1b.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/13.f2b60986.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/14.72abaa9e.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/15.d30a766c.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/16.86284a48.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/17.c76ddb87.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/18.c5895705.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/3.1f40acda.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/4.fec2fb72.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/5.f175b532.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/6.3a2136a3.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/8.676a4ad3.js">
+    <link rel="stylesheet" href="/hamlet_engineer/assets/css/0.styles.6cfb13ef.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/hamlet_engineer/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          ハムレット型エンジニアのカンニングノート
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/hamlet_engineer/" class="navbar-link" data-v-e4145d0a>
+            ホーム
+          </a><a href="/hamlet_engineer/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            記事検索
+          </a><a href="/hamlet_engineer/custom-pages/" class="navbar-link" data-v-e4145d0a>
+            雑記
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          vuepressのフォントの設定とページメニューの設定
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      作成日 : 2021-02-06
+    </span> <span class="update-date" data-v-4e23451f>
+      更新日 : 2021-02-06
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/hamlet_engineer/posts/2021/02/02/tech-0002.html" class="post-link" data-v-4e23451f>
+      前の記事へ : vuepressで作成したブログをGIthub Pageで公開する
+    </a> <!----></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="vuepressのフォントの設定とページメニューの追加"><a href="#vuepressのフォントの設定とページメニューの追加" class="header-anchor">#</a> vuepressのフォントの設定とページメニューの追加</h1> <p>デフォルトのフォントが中国語用の簡体字ベースなので，一般的に使われているフォントに変更します．そして，やりたいことをまとめるページを作りたかったので，ページメニューを追加します．</p> <h2 id="ファイル構成"><a href="#ファイル構成" class="header-anchor">#</a> ファイル構成</h2> <p>ファイル構成は以下通りです．</p> <div class="language-init extra-class"><pre class="language-text"><code>hamlet_engineer
+├── src
+│   ├── _posts
+│   │   └── 20190803.md
+│   │   └── 20210118.md
+│   ├── custom-pages &lt;-新規
+│   │   └── index.md &lt;-新規
+│   └── .vuepress
+│       ├── public
+│       │    └── img
+│       │          └── hirasu.jpg
+│       ├── components &lt;-新規
+│       │    └── CustomLayout.vue &lt;-新規
+│       └── config.js
+├── package.json
+├── yarn.lock
+├── /.git
+└── docs
+    ├── /assets
+    ├── /img
+    ├── /posts
+    ├── 404.html
+    └── index.html
+</code></pre></div><h2 id="ページメニューの追加"><a href="#ページメニューの追加" class="header-anchor">#</a> ページメニューの追加</h2> <p>雑記という名前でこれからやりたいことをまとめるページを追加します．
+.vuepress/components/CustomLayout.vueを新しく作成し，config.jsを編集します．</p> <div class="language-init extra-class"><pre class="language-text"><code>mkdir .vuepress/components/
+touch .vuepress/components/CustomLayout.vue
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token punctuation">.</span>vuepress<span class="token operator">/</span>components<span class="token operator">/</span>CustomLayout<span class="token punctuation">.</span>vue <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;custom-layout&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token punctuation">.</span>main<span class="token operator">-</span>div is the block <span class="token keyword">with</span> white background <span class="token operator">--</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;main-div&quot;</span><span class="token operator">&gt;</span>
+      This is a custom layout
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;main-div&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>Content <span class="token operator">/</span><span class="token operator">&gt;</span> is to show the rendered markdown content <span class="token keyword">of</span> <span class="token keyword">this</span> page <span class="token operator">--</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Content <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">&quot;content&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'CustomLayout'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .vuepress/config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  themeConfig<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ナビバーに表示する項目</span>
+        nav<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> text<span class="token operator">:</span> <span class="token string">'ホーム'</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> exact<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> text<span class="token operator">:</span> <span class="token string">'記事検索'</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">'/posts/'</span><span class="token punctuation">,</span> exact<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> text<span class="token operator">:</span> <span class="token string">'雑記'</span><span class="token punctuation">,</span> link<span class="token operator">:</span> <span class="token string">'/custom-pages/'</span><span class="token punctuation">,</span> exact<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>次に表示するページ内容を記入します．ここでは，vuepress-theme-meteorlxyのCustom Pagesの内容を記載します．</p> <div class="language-init extra-class"><pre class="language-text"><code># custom-pages/index.md
+---
+# Set the layout of this page
+layout: CustomLayout
+# Set the title of this page
+title: Welcome to my custom page
+# Show the aside info card or not (we hide it on this page)
+aside: false
+---
+Contents here will be rendered in the `&lt;Content /&gt;` component.
+</code></pre></div><p>以下のような画像がでれば追加完了です．
+<img src="/hamlet_engineer/assets/img/caustom_pages.d474f2af.png" alt=""></p> <h2 id="vuepressのフォントの設定"><a href="#vuepressのフォントの設定" class="header-anchor">#</a> vuepressのフォントの設定</h2> <p>.vuepress/styles/index.stylを生成して，簡体字フォントから日本語に適したフォントに変更します．<br></p> <div class="language-init extra-class"><pre class="language-text"><code>mkdir .vuepress/styles/
+touch .vuepress/styles/index.styl
+</code></pre></div><div class="language-init extra-class"><pre class="language-text"><code>body
+  font-family &quot;Helvetica&quot;
+</code></pre></div><h2 id="参考サイト"><a href="#参考サイト" class="header-anchor">#</a> 参考サイト</h2> <ul><li><a href="https://vuepress-theme-meteorlxy.meteorlxy.cn/custom-pages/" target="_blank" rel="noopener noreferrer">VuePressのカスタムページ<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://meuniere.dev/posts/2020/08/06/create-vuepress.html" target="_blank" rel="noopener noreferrer">VuePress + Netlifyでブログ作成<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      作成日 : 2021-02-06
+    </span> <span class="update-date" data-v-4e23451f>
+      更新日 : 2021-02-06
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/hamlet_engineer/posts/2021/02/02/tech-0002.html" class="post-link" data-v-4e23451f>
+      前の記事へ : vuepressで作成したブログをGIthub Pageで公開する
+    </a> <!----></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/hamlet_engineer/img/hirasu.jpg" alt="hirasu1231" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      hirasu1231
+    </section> <section class="info-desc" data-v-9d847660>ハムレット型：決断を下して行動に移るよりは、 むしろ懐疑や苦悩にこもってしまう思索的な性格．そんな精神療養中の元エンジニアです.</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="Fukuoka, Japan" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Fukuoka, Japan</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          Fukuoka, Japan
+        </span></span></section> <!----> <!----></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://twitter.com/hirasu1231" target="_blank" class="sns-link" data-v-9d847660><span title="Twitter: hirasu1231" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Twitter: hirasu1231</title><use xlink:href="#icon-twitter" data-v-9d847660 data-v-9d847660></use></svg></span></a><a href="https://github.com/hirasu1231" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: hirasu1231" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: hirasu1231</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>目次</span> <div class="post-nav-toc"><ul><li><a href="/hamlet_engineer/posts/2021/02/06/tech-0003.html#ファイル構成">ファイル構成</a></li><li><a href="/hamlet_engineer/posts/2021/02/06/tech-0003.html#ページメニューの追加">ページメニューの追加</a></li><li><a href="/hamlet_engineer/posts/2021/02/06/tech-0003.html#vuepressのフォントの設定">vuepressのフォントの設定</a></li><li><a href="/hamlet_engineer/posts/2021/02/06/tech-0003.html#参考サイト">参考サイト</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/hamlet_engineer/posts/2021/02/06/tech-0003.html#post-comments">
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://twitter.com/hirasu1231" target="_blank" class="sns-link" data-v-1375e54c><span title="Twitter: hirasu1231" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>Twitter: hirasu1231</title><use xlink:href="#icon-twitter" data-v-1375e54c data-v-1375e54c></use></svg></span></a><a href="https://github.com/hirasu1231" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: hirasu1231" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: hirasu1231</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <p class="footer-text" data-v-1375e54c><span data-v-1375e54c>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-1375e54c>
+      VuePress
+    </a> <span data-v-1375e54c> | </span> <a href="https://github.com/meteorlxy/vuepress-theme-meteorlxy" target="_blank" data-v-1375e54c>
+        meteorlxy
+      </a></p> <p class="footer-text" data-v-1375e54c>Copyright 2021 hirasu1231</p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/hamlet_engineer/assets/js/app.3306ee42.js" defer></script><script src="/hamlet_engineer/assets/js/7.5adad686.js" defer></script><script src="/hamlet_engineer/assets/js/9.cdb6f04e.js" defer></script>
+  </body>
+</html>
