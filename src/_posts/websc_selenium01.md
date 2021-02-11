@@ -10,7 +10,7 @@ tags:
 
 # docker+selenium+chromeでウェブスクレイピングする part1
 作業用BGMとして[甘茶の音楽工房](https://amachamusic.chagasi.com/image_kurai.htm)の音楽をダウンロードして聞いていました．いい加減面倒臭くなってきたので，ウェブスクレイピングでダウンロードしていきます．<br>
-本稿では，selenium + dockerのセッティングを実施します．
+本稿では，selenium + dockerのセッティングを実施します．ただし，jupyter or pythonはローカルです．
 
 ## selenium
 本稿では，seleniumでウェブスクレイピングを実施します．以前はrequestsとBeautifulSoupでスクレイピングしていましたが，jsで情報を挿入しているサイトではスクレイピングできないことがありましたので，seleniumを使います．<br>
@@ -25,55 +25,37 @@ https://selenium.dev/history/
 
 ## docker+selenium+chrome
 本稿では，docker上でseleniumを使います．dockerで使う理由として，chrome driverのversion管理が面倒臭いからです．<br>
-有志の方がdocker composeも作ってくださっているので，がっつりあやかります．
+有志の方がわかりやすくしてくれているので，がっつりあやかります．
 ```init
-$ git clone https://github.com/sikkimtemi/selenium
-$ cd selenium
-$ docker-compose up -d
+docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:4.0.0-beta-1-prerelease-20201208
 ```
-
-```yml
-# docker-compose.yml
-selenium-hub:
-  image: selenium/hub
-  container_name: 'selenium-hub'
-  ports:
-    - 4444:4444
-
-chrome:
-  image: selenium/node-chrome-debug
-  container_name: 'chrome'
-  links:
-    - selenium-hub:hub
-  ports:
-    - 5900:5900
-  volumes:
-    - /dev/shm:/dev/shm
-
-#firefox:
-#  image: selenium/node-firefox-debug
-#  container_name: 'firefox'
-#  ports:
-#   - 5910:5900
-#  links:
-#    - selenium-hub:hub
-
-python:
-  build: './python-selenium'
-  container_name: 'python'
-  links:
-    - selenium-hub:hub
-  command: 'tail -f /dev/null'
-  working_dir: '/root/script/'
-  volumes:
-    - ./script/:/root/script/
-  environment:
-    - 'TZ=Asia/Tokyo'
-```
-
 
 ### docker+selenium+chromeの起動確認
+docker+selenium+chromeの起動を確認します．また，ローカル上のchromeを使う際のコードも記載しておきます．
+
 ```python
+# dockerのselenium
+from selenium import webdriver
+
+# Chrome のオプションを設定する
+options = webdriver.ChromeOptions()
+
+# Selenium Server に接続する
+driver = webdriver.Remote(
+    command_executor='http://localhost:4444/wd/hub',
+    options=options,
+)
+
+# Selenium 経由でブラウザを操作する
+url = 'https://amachamusic.chagasi.com/image_ayashii.html'
+driver.get(url)
+print(driver.current_url)
+# 出力:https://amachamusic.chagasi.com/image_ayashii.html
+```
+
+```python
+# ローカル上のchromeを使う場合．
+
 # coding: UTF-8
 import requests
 from selenium import webdriver
@@ -103,7 +85,8 @@ print(driver.current_url)
 ```
 
 ## まとめ
-ここまででdocker+selenium+chromeの起動を実施しました．おおよその次の記事でseleniumの操作を検索しながら，必要な工程を実装します．
+ここまででdocker+selenium+chromeの起動を実施しました．おおよその次の記事でseleniumの操作を検索しながら，必要な工程を実装します．<br>
+時間があれば，docker composeまでやってdocker上のjupyterでやりたいです．
 
 
 
