@@ -1,6 +1,38 @@
 // .vuepress/config.js
 
 module.exports = {
+    // プラグイン
+    plugins: {
+        // サイトマップ(案内図)
+        //hostnameは自身のサイトのトップページです．
+        'sitemap': {
+          hostname: 'https://hirasu1231.github.io/hamlet_engineer/',
+          //excludeはいらんところを案内図からはずす
+          exclude: ["/404.html"],
+          //dateFormatterは更新の度にサイトマップも更新
+          dateFormatter: val => {
+              return new Date().toISOString()
+            }
+        },
+
+        // Google Analytics
+        // gaは．Google Analytics登録時に発行されるトラッキングID
+        // 最新のGA4で発行されるG-00000000のIDは未対応
+        '@vuepress/google-analytics': {
+            'ga': 'UA-189978044-1'
+        },
+
+        // seo(metaタグ)
+        'seo': {
+            // descriptionは検索時に表示されるサイトの説明
+            description: ($page, $site) => $page.frontmatter.description || ($page.excerpt && $page.excerpt.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g, "")) || $site.description || "",
+            // titleは検索時に表示されるサイトのタイトル
+            title: ($page, $site) => $page.title || $site.title,
+            // imageはSNSでリンクした際などにプレビュー表示される画像
+            image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain || '') + $page.frontmatter.image) || 'https://placehold.jp/40//000/600x315.png?css=%7B"padding"%3A"%200%2080px"%2C"background-image"%3A"%20url(https://hirasu1231.github.io/hamlet_engineer/img/ogp.jpg)"%7D&text='+encodeURIComponent($page.title||$site.title),
+        },
+      },
+      
     // GitHub Pagesにホスティング
     base: '/hamlet_engineer/',
     dest: 'docs',
@@ -22,6 +54,14 @@ module.exports = {
 
     // Theme config
     themeConfig: {
+        // ドメイン
+        domain: 'https://hirasu1231.github.io/hamlet_engineer',
+
+        // RSSの設置
+        feed: {
+            canonical_base: 'https://hirasu1231.github.io/hamlet_engineer',
+        },
+        
         // ボタンなどを日本語に変更
         lang: {
             home: 'ホーム',
