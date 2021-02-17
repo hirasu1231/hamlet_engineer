@@ -1,0 +1,3 @@
+User-agent : *
+Disallow :
+Sitemap : https://hirasu1231.github.io/hamlet_engineer/sitemap.xml
