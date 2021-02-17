@@ -1,6 +1,11 @@
 // .vuepress/config.js
 
 module.exports = {
+    // metaタグ
+    head: [
+        ['meta', { name: 'google-site-verification', content: 'v84F7EpkTSoxgy7bMoDugYVlMSDZ4mXp9mddQiYAl5w' }],
+        ],
+
     // プラグイン
     plugins: {
         // サイトマップ(案内図)
@@ -61,7 +66,7 @@ module.exports = {
         feed: {
             canonical_base: 'https://hirasu1231.github.io/hamlet_engineer',
         },
-        
+
         // ボタンなどを日本語に変更
         lang: {
             home: 'ホーム',
