@@ -1,15 +1,17 @@
 ---
-title: 'docker+selenium+chromeでウェブスクレイピングをする part3'
+title: 'Python＋Docker＋Selenium＋Chromeでウェブスクレイピングをする part3'
+description: Python＋Docker＋Selenium＋Chromeで甘茶の音楽工房ウェブスクレイピングします．本稿では，前回のまでの工程をdef文を用いて定義します．
 date: 2021-02-13
-category: python
+category: Python
 tags:
-  - python
-  - docker
+  - Python
+  - Jupyter
+  - Docker
   - ウェブスクレイピング
 ---
-# docker+selenium+chromeでウェブスクレイピングする part3
-作業用BGMとして[甘茶の音楽工房](https://amachamusic.chagasi.com/image_kurai.htm)の音楽をダウンロードして聞いていました．いい加減面倒臭くなってきたので，ウェブスクレイピングでダウンロードしていきます．<br>
-本稿では，前回のまでの工程をdef文を用いて定義します．
+# Python＋Docker＋Selenium＋Chromeでウェブスクレイピングをする part3'
+Docker＋Selenium＋Chromeで甘茶の音楽工房ウェブスクレイピングします．本稿では，前回のまでの工程をdef文を用いて定義します．<br>
+作業用BGMとして[甘茶の音楽工房](https://amachamusic.chagasi.com/image_kurai.htm)の音楽をダウンロードして聞いていました．いい加減面倒臭くなってきたので，ウェブスクレイピングでダウンロードしていきます．
 
 ## スクリプト
 ### モジュール

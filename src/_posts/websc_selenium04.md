@@ -1,18 +1,21 @@
 ---
-title: 'selenium+chromeでyoutubeの動画をダウンロードする'
+title: 'Python＋Selenium＋ChromeでウェブスクレイピングしてYouTubeの動画をダウンロードする'
+description: Python＋Selenium＋ChromeでウェブスクレイピングしてYouTubeの動画をダウンロードします．本稿では，OfflibertyをSeleniumでダウンロードします
 date: 2021-02-15
-category: python
+category: Python
 tags:
-  - python
+  - Python
+  - Jupyter
   - ウェブスクレイピング
 ---
-# selenium+chromeでyoutubeの動画をダウンロードする
+# Python＋Selenium＋ChromeでウェブスクレイピングしてYouTubeの動画をダウンロードする
+Python＋Selenium＋ChromeでウェブスクレイピングしてYouTubeの動画をダウンロードします．<br>
 前回までの[甘茶の音楽工房のダウンロード](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/11/websc-selenium01.html)を実施していましたが，せっかくなのでseleniumをとうしたブラウザの操作をしてみます．<br>
-本稿では，[offliberty](http://offliberty.io)というyoutubeのURLをコピペすればダウンロードできるサイトがあったので，これの操作をseleniumでします．<br>
+本稿では，[Offliberty](http://offliberty.io)というYouTubeのURLをコピペすればダウンロードできるサイトがあったので，これの操作をSeleniumでします．<br>
 今回は練習でしたものですので，多分に悪ふざけが入っていますし，def文でまとめてはいません．
 
 ## selenium.webdriverの起動
-selenium.webdriverの起動は本サイトの[docker+selenium+chromeでウェブスクレイピングする part3](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/13/websc-selenium03.html)で作成したものを使います．
+selenium.webdriverの起動は本サイトの[Python＋Docker＋Selenium＋Chromeでウェブスクレイピングをする part3](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/13/websc-selenium03.html)で作成したものを使います．
 ```python
 # ローカル上でselenium.webdriverの起動
 def webdriver_local_start():
