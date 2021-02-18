@@ -34,7 +34,8 @@ module.exports = {
             // titleは検索時に表示されるサイトのタイトル
             title: ($page, $site) => $page.title || $site.title,
             // imageはSNSでリンクした際などにプレビュー表示される画像
-            image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain || '') + $page.frontmatter.image) || 'https://hirasu1231.github.io/hamlet_engineer/img/ogp.jpg',
+            // image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain || '') + $page.frontmatter.image) || 'https://hirasu1231.github.io/hamlet_engineer/img/ogp.jpg',
+            image: ($page, $site) => $page.frontmatter.image && (($site.themeConfig.domain || '') + $page.frontmatter.image) || 'https://placehold.jp/40//fff/600x314.png?css=%7B"padding"%3A"%200%2080px"%2C"background-image"%3A"%20url(https%3A%2F%2Fplacehold.jp%2F057%2F333%2F130x40.png%3Ftext%3Dhamlet_engineer)"%7D&text='+encodeURIComponent($page.title||$site.title),
         },
       },
       
