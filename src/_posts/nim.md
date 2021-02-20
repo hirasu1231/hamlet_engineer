@@ -1,16 +1,15 @@
 ---
-title: 'JupyterLabにNimを対応させる'
+title: 'Nimが対応したJupyterLabをDockerでインストールする'
 description: Nimが扱えるJupyterLabをDockerにインストールします．
-date: 2021-02-19
-category: Docker
+date: 2021-02-20
+category: Nim
 tags:
+  - Nim
+  - Jupyter
   - Docker
-  - Go
-  - Julia
-  - Rust
 ---
-# JupyterLabにNimを対応させる
-Nimが扱えるJupyterLabをDockerにインストールします．．
+# Nimが対応したJupyterLabをDockerでインストールする
+Nimが扱えるJupyterLabをDockerにインストールします．
 
 ## インストール
 [tsutomu7/nim](https://hub.docker.com/r/tsutomu7/nim/)のイメージをdocker-composeでPullします．<br>
@@ -30,6 +29,8 @@ services:
 ```
 $ mkdir jupyter-nim
 $ cd jupyter-nim
+$ touch docker-compose.yml
+# 中身記述後
 $ docker-compose up
 ```
 
