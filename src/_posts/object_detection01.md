@@ -111,7 +111,7 @@ for anno_info in pic["annotations"][0:1000]:
     # category_id:4-bike
     if anno_info['category_id'] in category_ids:
         # ファイル名, カテゴリー, bbox情報
-        # bbox情報は
+        # bbox情報は[左上x座標, 左上y座標, 幅, 高さ]です
         print(coco_image_path, anno_info['category_id'], anno_info['bbox'])
         break
 # coco/images/val2017/000000356387.jpg 4 [139.71, 265.98, 127.69, 66.1]
