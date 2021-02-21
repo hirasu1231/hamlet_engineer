@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>COCOデータセットをダウンロードし，特定のクラスを抽出する | ハムレット型エンジニアのカンニングノート</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <meta name="description" content="YOLO・SSDの物体検出の実施のために，COCOデータセットをダウンロードし，特定のクラスだけを抽出します．">
+    <meta property="article:published_time" content="2021-02-21T00:00:00.000Z">
+    <meta property="article:modified_time" content="2021-02-21T09:48:07.000Z">
+    <meta property="og:site_name" content="ハムレット型エンジニアのカンニングノート">
+    <meta property="og:title" content="COCOデータセットをダウンロードし，特定のクラスを抽出する">
+    <meta property="og:description" content="YOLO・SSDの物体検出の実施のために，COCOデータセットをダウンロードし，特定のクラスだけを抽出します．">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/21/object-detection01.html">
+    <meta name="twitter:title" content="COCOデータセットをダウンロードし，特定のクラスを抽出する">
+    <meta name="twitter:description" content="YOLO・SSDの物体検出の実施のために，COCOデータセットをダウンロードし，特定のクラスだけを抽出します．">
+    <meta name="twitter:url" content="https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/21/object-detection01.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Python, Jupyter, 物体検出, YOLO, SSD">
+    <meta property="article:tag" content="Python">
+    <meta name="google-site-verification" content="v84F7EpkTSoxgy7bMoDugYVlMSDZ4mXp9mddQiYAl5w">
+    <link rel="preload" href="/hamlet_engineer/assets/css/0.styles.6cfb13ef.css" as="style"><link rel="preload" href="/hamlet_engineer/assets/js/app.e2ea2b50.js" as="script"><link rel="preload" href="/hamlet_engineer/assets/js/8.ae6a6da3.js" as="script"><link rel="preload" href="/hamlet_engineer/assets/js/11.3983633b.js" as="script"><link rel="prefetch" href="/hamlet_engineer/assets/js/1.5b68d2ab.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/10.3f0e868c.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/12.5d95877d.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/13.47130f71.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/14.e5fe6cac.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/15.0e4ffbd1.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/16.6dfdf140.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/17.31cfbc9a.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/18.a0fc5b5a.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/19.bdf82192.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/20.29035899.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/21.618b2d4f.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/22.f39755c1.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/23.c5220391.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/24.6d30d30d.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/25.3cd16098.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/3.0f004393.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/4.3c987fe5.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/5.a9f81fc4.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/6.f2db95de.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/7.b47792e5.js"><link rel="prefetch" href="/hamlet_engineer/assets/js/9.0ec77ba3.js">
+    <link rel="stylesheet" href="/hamlet_engineer/assets/css/0.styles.6cfb13ef.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/hamlet_engineer/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          ハムレット型エンジニアのカンニングノート
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/hamlet_engineer/" class="navbar-link" data-v-e4145d0a>
+            ホーム
+          </a><a href="/hamlet_engineer/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            記事検索
+          </a><a href="/hamlet_engineer/custom-pages/" class="navbar-link" data-v-e4145d0a>
+            雑記
+          </a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          COCOデータセットをダウンロードし，特定のクラスを抽出する
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      作成日 : 2021-02-21
+    </span> <span class="update-date" data-v-4e23451f>
+      更新日 : 2021-02-21
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/hamlet_engineer/posts/2021/02/20/nim.html" class="post-link" data-v-4e23451f>
+      前の記事へ : Nimが対応したJupyterLabをDockerでインストールする
+    </a> <!----></section></section> <article class="main-div"><div class="post-content content content__default"><h1 id="cocoデータセットをダウンロードし-特定のクラスを抽出する"><a href="#cocoデータセットをダウンロードし-特定のクラスを抽出する" class="header-anchor">#</a> COCOデータセットをダウンロードし，特定のクラスを抽出する</h1> <p>YOLO・SSDの物体検出の実施のために，まずCOCOデータセットをダウンロードし，特定のクラスだけを抽出します．<br>
+COCOデータセットは物体検出・セグメーテーション等の学習に使え，無料で大量に公開されているデータセットです．<br>
+プログラムはJupyter Notebook形式で作成しています．<br>
+最終的に，Youtubeの<a href="https://www.youtube.com/watch?v=wnRH3-CIk4I" target="_blank" rel="noopener noreferrer">平成24年 元旦配達出発式<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>のIDを振り分けるトラッキングも含めたバイクのカウントを実施します．</p> <h2 id="cocoデータセットのダウンロード"><a href="#cocoデータセットのダウンロード" class="header-anchor">#</a> COCOデータセットのダウンロード</h2> <p><a href="https://gist.github.com/mkocabas/a6177fc00315403d31572e17700d7fd9" target="_blank" rel="noopener noreferrer">mkocabas/coco.sh<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>のcoco.shを実行し，COCOデータセットをダウンロードします．<br>
+大容量データなので，ダウンロードに時間がかかります．<br> <a href="https://cocodataset.org/#download" target="_blank" rel="noopener noreferrer">coco 公式HP<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>からもダウンロードできます.</p> <div class="language- extra-class"><pre class="language-text"><code>sh coco.sh
+</code></pre></div><h2 id="ダウンロード後のファイル構成"><a href="#ダウンロード後のファイル構成" class="header-anchor">#</a> ダウンロード後のファイル構成</h2> <div class="language-init extra-class"><pre class="language-text"><code>coco
+├── annotations
+│   ├── _deprecated-challenge2017
+│   │   ├── train-ids.txt
+│   │   └── val-ids.txt
+│   ├── captions_train2017.json
+│   ├── captions_val2017.json
+│   ├── image_info_test-dev2017.json
+│   ├── image_info_test2017.json
+│   ├── image_info_unlabeled2017.json
+│   ├── instances_train2017.json
+│   ├── instances_val2017.json
+│   ├── person_keypoints_train2017.json
+│   ├── person_keypoints_val2017.json
+│   ├── stuff_train2017_pixelmaps.zip
+│   ├── stuff_train2017.json
+│   ├── stuff_val2017_pixelmaps.zip
+│   └── stuff_val2017.json
+│
+└── images
+    ├── test2017
+    ├── train2017
+    ├── unlabeled2017
+    └── val2017
+</code></pre></div><h2 id="cocoのデータセットの整理"><a href="#cocoのデータセットの整理" class="header-anchor">#</a> cocoのデータセットの整理</h2> <p>画像のアノテーション情報を取得し，cocoのデータセットの中からバイク(motorcycle)だけを抽出します．</p> <h3 id="アノテーション情報からクラスidを確認"><a href="#アノテーション情報からクラスidを確認" class="header-anchor">#</a> アノテーション情報からクラスIDを確認</h3> <p>jsonファイルから画像のアノテーション情報を取得し，クラスIDのリストからバイク(motorcycle)のクラスIDを確認します.<br>
+そして，あとでdef文にまとめるために引数もどきを準備しています．</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> json
+<span class="token comment"># 引数もどき</span>
+data_type <span class="token operator">=</span> <span class="token string">'val'</span> <span class="token comment"># train or val</span>
+year <span class="token operator">=</span> <span class="token number">2017</span>
+coco_data_type <span class="token operator">=</span> data_type <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span>
+<span class="token comment"># 画像のアノテーション情報を取得</span>
+jfile <span class="token operator">=</span> <span class="token string">'./coco/annotations/instances_{}.json'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>coco_data_type<span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>jfile<span class="token punctuation">,</span> <span class="token string">&quot;r&quot;</span><span class="token punctuation">)</span> <span class="token keyword">as</span> fp<span class="token punctuation">:</span>
+    pic <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>fp<span class="token punctuation">)</span>
+<span class="token comment"># クラスIDのリストを取得</span>
+display<span class="token punctuation">(</span>pic<span class="token punctuation">[</span><span class="token string">&quot;categories&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#jupyter用のprint文</span>
+<span class="token comment"># [{'supercategory': 'person', 'id': 1, 'name': 'person'},</span>
+<span class="token comment">#  {'supercategory': 'vehicle', 'id': 2, 'name': 'bicycle'},</span>
+<span class="token comment">#  {'supercategory': 'vehicle', 'id': 3, 'name': 'car'},</span>
+<span class="token comment">#  {'supercategory': 'vehicle', 'id': 4, 'name': 'motorcycle'},</span>
+<span class="token comment">#  ・</span>
+<span class="token comment">#  ・</span>
+<span class="token comment">#  ・</span>
+<span class="token comment">#  {'supercategory': 'indoor', 'id': 89, 'name': 'hair drier'},</span>
+<span class="token comment">#  {'supercategory': 'indoor', 'id': 90, 'name': 'toothbrush'}]</span>
+</code></pre></div><h3 id="アノテーション情報からバイクの物だけ抽出"><a href="#アノテーション情報からバイクの物だけ抽出" class="header-anchor">#</a> アノテーション情報からバイクの物だけ抽出</h3> <p>jsonファイルからバイク(motorcycle)のクラスIDを確認したので，jsonファイルから更に画像ファイル名とバウンディングボックスの情報を取得します.<br>
+画像ファイル名は，画像IDを12桁ゼロ埋めで格納されています．(111 -&gt; 000000000111)</p> <div class="language-python extra-class"><pre class="language-python"><code><span class="token keyword">import</span> os
+<span class="token triple-quoted-string string">'''
+ {'supercategory': 'vehicle', 'id': 4, 'name': 'motorcycle'}
+'''</span>
+<span class="token comment"># 引数もどき</span>
+data_type <span class="token operator">=</span> <span class="token string">'val'</span> <span class="token comment"># train or val</span>
+year <span class="token operator">=</span> <span class="token number">2017</span>
+pic <span class="token operator">=</span> pic
+category_ids <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token comment"># ディレクトリの設定</span>
+coco_data_type <span class="token operator">=</span> data_type <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>year<span class="token punctuation">)</span>
+<span class="token keyword">for</span> anno_info <span class="token keyword">in</span> pic<span class="token punctuation">[</span><span class="token string">&quot;annotations&quot;</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token comment"># 入力画像名の抽出</span>
+    image_id <span class="token operator">=</span> anno_info<span class="token punctuation">[</span><span class="token string">'image_id'</span><span class="token punctuation">]</span>
+    filename <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>image_id<span class="token punctuation">)</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span><span class="token punctuation">)</span>
+    coco_image_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token string">'coco'</span><span class="token punctuation">,</span> <span class="token string">'images'</span><span class="token punctuation">,</span> coco_data_type<span class="token punctuation">,</span> filename<span class="token punctuation">)</span>
+    <span class="token comment"># category_id:4-bike</span>
+    <span class="token keyword">if</span> anno_info<span class="token punctuation">[</span><span class="token string">'category_id'</span><span class="token punctuation">]</span> <span class="token keyword">in</span> category_ids<span class="token punctuation">:</span>
+        <span class="token comment"># ファイル名, カテゴリー, bbox情報</span>
+        <span class="token comment"># bbox情報は[左上x座標, 左上y座標, 幅, 高さ]です</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>coco_image_path<span class="token punctuation">,</span> anno_info<span class="token punctuation">[</span><span class="token string">'category_id'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> anno_info<span class="token punctuation">[</span><span class="token string">'bbox'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+<span class="token comment"># coco/images/val2017/000000356387.jpg 4 [139.71, 265.98, 127.69, 66.1]</span>
+</code></pre></div><p><code>000000356387.jpg</code><br> <img src="/hamlet_engineer/assets/img/000000356387.c5b4b958.jpg" alt=""></p> <h2 id="まとめ"><a href="#まとめ" class="header-anchor">#</a> まとめ</h2> <p>ここまででYOLO・SSDの物体検出の実施のために，まずCOCOデータセットをダウンロードし，特定のクラスだけを抽出しました．<br>
+次からはDarknetとKeras-yolov4の各々の入力形式に整理します．</p> <h2 id="参考サイト"><a href="#参考サイト" class="header-anchor">#</a> 参考サイト</h2> <p><a href="https://cocodataset.org/#download" target="_blank" rel="noopener noreferrer">coco 公式HP<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br> <a href="https://gist.github.com/mkocabas/a6177fc00315403d31572e17700d7fd9" target="_blank" rel="noopener noreferrer">mkocabas/coco.sh<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br> <a href="https://qiita.com/leetmikeal/items/7c0d23e39bf38ab8be23" target="_blank" rel="noopener noreferrer">画像を扱う機械学習のためのデータセットまとめ<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><br></p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      作成日 : 2021-02-21
+    </span> <span class="update-date" data-v-4e23451f>
+      更新日 : 2021-02-21
+    </span></section> <section class="post-links" data-v-4e23451f><a href="/hamlet_engineer/posts/2021/02/20/nim.html" class="post-link" data-v-4e23451f>
+      前の記事へ : Nimが対応したJupyterLabをDockerでインストールする
+    </a> <!----></section></section> <div id="post-comments" class="main-div"><!----></div></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="/hamlet_engineer/img/hirasu.jpg" alt="hirasu1231" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      hirasu1231
+    </section> <section class="info-desc" data-v-9d847660>ハムレット型：決断を下して行動に移るよりは、 むしろ懐疑や苦悩にこもってしまう思索的な性格．そんな精神療養中の元エンジニアです.</section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="Fukuoka, Japan" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Fukuoka, Japan</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          Fukuoka, Japan
+        </span></span></section> <!----> <!----></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://twitter.com/hirasu1231" target="_blank" class="sns-link" data-v-9d847660><span title="Twitter: hirasu1231" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>Twitter: hirasu1231</title><use xlink:href="#icon-twitter" data-v-9d847660 data-v-9d847660></use></svg></span></a><a href="https://github.com/hirasu1231" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: hirasu1231" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: hirasu1231</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>目次</span> <div class="post-nav-toc"><ul><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#cocoデータセットのダウンロード">COCOデータセットのダウンロード</a></li><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#ダウンロード後のファイル構成">ダウンロード後のファイル構成</a></li><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#cocoのデータセットの整理">cocoのデータセットの整理</a><ul><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#アノテーション情報からクラスidを確認">アノテーション情報からクラスIDを確認</a></li><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#アノテーション情報からバイクの物だけ抽出">アノテーション情報からバイクの物だけ抽出</a></li></ul></li><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#まとめ">まとめ</a></li><li><a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#参考サイト">参考サイト</a></li></ul></div></div> <div class="post-nav-comments"><svg class="icon"><title>comment</title><use xlink:href="#icon-comment"></use></svg> <a href="/hamlet_engineer/posts/2021/02/21/object-detection01.html#post-comments">
+    </a></div></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://twitter.com/hirasu1231" target="_blank" class="sns-link" data-v-1375e54c><span title="Twitter: hirasu1231" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>Twitter: hirasu1231</title><use xlink:href="#icon-twitter" data-v-1375e54c data-v-1375e54c></use></svg></span></a><a href="https://github.com/hirasu1231" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: hirasu1231" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: hirasu1231</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <p class="footer-text" data-v-1375e54c><span data-v-1375e54c>Powered by </span> <a href="https://github.com/vuejs/vuepress" target="_blank" data-v-1375e54c>
+      VuePress
+    </a> <span data-v-1375e54c> | </span> <a href="https://github.com/meteorlxy/vuepress-theme-meteorlxy" target="_blank" data-v-1375e54c>
+        meteorlxy
+      </a></p> <p class="footer-text" data-v-1375e54c>Copyright 2021 hirasu1231</p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/hamlet_engineer/assets/js/app.e2ea2b50.js" defer></script><script src="/hamlet_engineer/assets/js/8.ae6a6da3.js" defer></script><script src="/hamlet_engineer/assets/js/11.3983633b.js" defer></script>
+  </body>
+</html>
