@@ -86,7 +86,7 @@ display(pic["categories"]) #jupyter用のprint文
 ```
 
 ### アノテーション情報からバイクの物だけ抽出
-jsonファイルからバイク(motorcycle)のクラスIDを確認したので，jsonファイルから更に画像ファイル名とバウンディングボックスの情報を取得します.<br>
+jsonファイルからバイク(motorcycle)のクラスIDを確認したので，jsonファイルから更に画像ファイル名とBountingBoxの情報を取得します.<br>
 画像ファイル名は，画像IDを12桁ゼロ埋めで格納されています．(111 -> 000000000111)
 ```python
 import os
@@ -124,6 +124,9 @@ for anno_info in pic["annotations"][0:1000]:
 ここまででYOLO・SSDの物体検出の実施のために，まずCOCOデータセットをダウンロードし，特定のクラスだけを抽出しました．<br>
 次からはDarknetとKeras-yolov4の各々の入力形式に整理します．
 
+## 関連記事
+前パート：<br>
+次パート：[COCOデータセットをdarknet(Yolov4)で学習できるように整形する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/21/object-detection02.html)
 
 
 ## 参考サイト
