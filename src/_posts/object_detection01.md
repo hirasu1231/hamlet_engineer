@@ -126,7 +126,7 @@ for anno_info in pic["annotations"][0:1000]:
 
 ## 関連記事
 前パート：<br>
-次パート：[COCOデータセットをdarknet(Yolov4)で学習できるように整形する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/21/object-detection02.html)
+次パート：[COCOデータセットをDarknet(Yolov4)で学習できるように整形する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/22/object-detection02.html)
 
 
 ## 参考サイト

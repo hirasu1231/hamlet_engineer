@@ -1,6 +1,6 @@
 ---
-title: 'COCOデータセットをdarknet(Yolov4)で学習できるように整形する'
-description: COCOデータセットから特定のクラスを抽出できるようにしたので，darknet(Yolov4)で学習できるように整形ます．
+title: 'COCOデータセットをDarknet(Yolov4)で学習できるように整形する'
+description: COCOデータセットから特定のクラスを抽出できるようにしたので，Darknet(Yolov4)で学習できるように整形します．
 date: 2021-02-22
 category: Python
 tags:
@@ -11,8 +11,8 @@ tags:
   - Darknet
 ---
 
-# COCOデータセットをdarknet(Yolov4)で学習できるように整形する
-COCOデータセットから特定のクラスを抽出できるようにしたので，darknet(Yolov4)で学習できるように整形します．<br>
+# COCOデータセットをDarknet(Yolov4)で学習できるように整形する
+COCOデータセットから特定のクラスを抽出できるようにしたので，Darknet(Yolov4)で学習できるように整形します．<br>
 プログラムはJupyter Notebook形式で作成しています．<br>
 最終的に，Youtubeの[平成24年 元旦配達出発式](https://www.youtube.com/watch?v=wnRH3-CIk4I)のIDを振り分けるトラッキングも含めたバイクのカウントを実施します．
 
@@ -29,12 +29,10 @@ dataset
 ├── darknet4_bike <- 学習用
 │   ├── /train
 │   │   └── (省略)
-│   ├── /val
-│   │   ├── 000000356387.jpg
-│   │   ├── 000000356387.txt
-│   │   └── (省略)
-│   ├── train.txt
-│   └── val.txt
+│   └── /val
+│       ├── 000000356387.jpg
+│       ├── 000000356387.txt
+│       └── (省略)
 └── dataset_darknet.ipynb <- 実行用ノートブック
 ```
 
@@ -301,11 +299,11 @@ for image_path in image_paths:
 
 ## まとめ
 COCOデータセットから特定のクラスを抽出できるようにしたので，darknet(Yolov4)で学習できるように整形しました．<br>
-次では，実際にDarknetの学習を実施します．
+次では，Darknetの学習時に必要な設定ファイルを作成します．
 
 ## 関連記事
 前パート：[COCOデータセットをダウンロードし，特定のクラスを抽出する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/21/object-detection01.html)<br>
-次パート：
+次パート：[Darknet(Yolov4)で学習させるためのcfgファイル等をファイルを作成する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/24/object-detection03.html)
 
 ## 参考サイト
 [AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)<br>
