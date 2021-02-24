@@ -17,7 +17,7 @@ COCOデータセットから特定のクラスの抽出・学習形式への整�
 プログラムはJupyter Notebook形式で作成しています．<br>
 最終的に，Youtubeの[平成24年 元旦配達出発式](https://www.youtube.com/watch?v=wnRH3-CIk4I)のIDを振り分けるトラッキングも含めたバイクのカウントを実施します．
 
-## Google Colabのファイル構成
+## ファイル構成
 プロジェクトディレクトリはpost_bikeとしています．
 ```init
 post_bike
