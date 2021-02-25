@@ -1,5 +1,5 @@
 ---
-title: 'Darknet(Yolov4)で学習させるためのcfgファイル等をファイルを作成する'
+title: 'Darknet(Yolov4)で学習させるためのcfgファイル等を作成する'
 description: COCOデータセットから特定のクラスを抽出・学習形式に整形ましたので，そのデータでdarknet(Yolov4)で学習を実施します．
 date: 2021-02-24
 category: Python
@@ -12,7 +12,7 @@ tags:
   - Google Colab
 ---
 
-# Darknet(Yolov4)で学習させるためのcfgファイル等をファイルを作成する
+# Darknet(Yolov4)で学習させるためのcfgファイル等を作成する
 COCOデータセットから特定のクラスの抽出・学習形式への整形を実施しましたので，学習に用いる画像のパスを示すtxtファイルやモデルのネットワークを示すcfgファイル等を作成します．<br>
 プログラムはJupyter Notebook形式で作成しています．<br>
 最終的に，Youtubeの[平成24年 元旦配達出発式](https://www.youtube.com/watch?v=wnRH3-CIk4I)のIDを振り分けるトラッキングも含めたバイクのカウントを実施します．
@@ -273,7 +273,7 @@ cfg_outfile.close()
 
 ## 関連記事
 前パート：[COCOデータセットをdarknet(Yolov4)で学習できるように整形する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/22/object-detection02.html)<br>
-次パート：
+次パート：[Python + Google Colab + Darknet(Yolov4)で学習でバイク検出を学習する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/25/object-detection04.html)
 
 ## 参考サイト
 [AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)<br>

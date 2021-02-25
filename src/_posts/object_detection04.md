@@ -1,5 +1,5 @@
 ---
-title: 'Python + Google Colab + Darknet(Yolov4)で学習でバイク検出を学習する'
+title: 'Python + Google Colab + Darknet(Yolov4)でバイク検出を学習する'
 description: COCOデータセットから特定のクラスの画像を抽出し，アノテーション情報を整形したので，Darknet(Yolov4)での学習を実施します．
 date: 2021-02-25
 category: Python
@@ -12,7 +12,7 @@ tags:
   - Google Colab
 ---
 
-# Python + Google Colab + Darknet(Yolov4)で学習でバイク検出を学習する
+# Python + Google Colab + Darknet(Yolov4)でバイク検出を学習する
 COCOデータセットから特定のクラスの画像を抽出し，アノテーション情報を整形したので，Darknet(Yolov4)での学習を実施します．<br>
 今回はGoogle ColabとGoogle Driveを連携させて，notebook形式で実行してます．<br>
 
@@ -344,7 +344,7 @@ if __name__ == '__main__':
 --data_file darknet4_bike/yolov4_bike.data \
 --thresh 0.5
 ```
-Darknet(Yolov4)の検出結果
+Darknet(Yolov4)の検出結果<br>
 ![Darknet(Yolov4)の検出結果](./image/yolov4_post_md.gif)
 
 
@@ -353,7 +353,7 @@ Darknet(Yolov4)でバイク検出の学習を実施しましました．<br>
 結構検出できていたので，次は，「keras-yoloでの転移学習」・「DEEPSORTによるトラッキング」・「FastMOTによるトラッキング」・「EfficientDet」を実施します．
 
 ## 関連記事
-前パート：[Darknet(Yolov4)で学習させるためのcfgファイル等をファイルを作成する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/24/object-detection03.html)<br>
+前パート：[Darknet(Yolov4)で学習させるためのcfgファイル等を作成する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/24/object-detection03.html)<br>
 次パート：
 
 ## 参考サイト
