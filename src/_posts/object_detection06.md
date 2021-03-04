@@ -51,7 +51,7 @@ post_bike
 
 ## keras-yolo4
 ### keras-yolo4のダウンロード
-Google ColabとGoogle Driveを連携させて，gitからdarknetをダウンロードします．
+Google ColabとGoogle Driveを連携させて，gitからkeras-yolo4をダウンロードします．
 ```python
 # Google ColabとGoogle Driveを連携
 from google.colab import drive
@@ -144,7 +144,7 @@ cv2.imwrite('person_result.jpg',image)
 # テスト(person.jpg)
 !python test.py
 ```
-person.jpgの検出結果
+person.jpgの検出結果<br>
 ![](./image/keras_person_result.jpg)
 
 ## keras-yolo4での学習
