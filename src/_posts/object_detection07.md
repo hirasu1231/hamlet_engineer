@@ -23,20 +23,30 @@ tags:
 プロジェクトディレクトリはpost_bikeとしています．度々，省略しています．
 ```init
 post_bike
-├── /keras-yolo4
-│   ├── /logs <- 学習モデルの保存先
-│   │   └── /keras_bike
-│   ├── keras_bike.zip <- 学習データ解凍前
-│   ├── /keras_bike <- 学習データ
-│   ├── decode_np.py
-│   ├── test.py
-│   ├── test_video.py
-│   ├── yolov4.weights
-│   ├── yolo4_weight.h5
-│   ├── H240101_post.mp4 <- 元動画
-│   ├── keras_post.mp4 <- 検出動画
+├── /yolov4-deepsort
+│   ├── /checkpoints
+│   │   └── /yolov4-416
+│   │       └── saved_model.pb
+│   ├── /outputs
+│   │   └── demo.mp4
+│   ├── /data
+│   │   └── yolov4.weights
+│   ├── /core
+│   │   └── config.py
+│   ├── /deep_sort
+│   │   └── tracker.py
+│   ├── /post_bike_weight <- 独自モデル
+│   │   ├── yolov4_bike.names
+│   │   └── /darknet
+│   │       ├── /yolov4_bike_best.pb
+│   │       └── yolov4_bike_best.weights
+│   ├── object_tracker.py
+│   ├── object_tracker_bike.py <- バイクカウンター
+│   ├── H240101_post.mp4 <- 入力動画
+│   ├── darknet_ds_post.mp4 <- 検出動画
+│   ├── count_darknet_ds_post.mp4 <- カウント動画
 │   └── (省略)
-└── keras-yolo4.ipynb <- 実行用ノートブック
+└── yolov4-deepsort.ipynb <- 実行用ノートブック
 ```
 
 ## DeepSort
