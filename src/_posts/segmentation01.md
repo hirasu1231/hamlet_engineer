@@ -37,7 +37,8 @@ segmentation
 │   ├── /sample_images <- サンプル画像
 │   ├── /results_segmentation <- モデルの出力ディレクトリ
 │   ├── /result_images <- 着色画像の出力ディレクトリ
-│   │
+│   ├── /vision_datasets
+│   │       └── /cityscapes <- cityscapesデータセット
 │   ├── segmentation_demo.py
 │   ├── train_segmentation.py
 │   ├── test_segmentation.py
