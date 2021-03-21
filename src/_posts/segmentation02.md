@@ -1,17 +1,17 @@
 ---
-title: 'Python, ESPNetでオリジナルデータを学習しSemantic Segmentationを実施する(データ生成編)'
-description: Python, ESPNetでCityscapesデータセットから人のみを抽出して，仮のオリジナルデータを生成します．
+title: 'Python + ESPNetをオリジナルデータで学習する(データ生成編) '
+description: Python + ESPNetでCityscapesデータセットから人のみを抽出して，仮のオリジナルデータを生成します．
 date: 2021-03-17
 category: Python
 tags:
   - Python
   - Jupyter
   - ESPNet
-  - Semantic Segmentation
+  - セマンティックセグメンテーション
 ---
 
-## Python, ESPNetでオリジナルデータを学習しSemantic Segmentationを実施する(データ生成編)
-Semantic Segmentationの中で軽いモデルであるESPNetv2を実装します．<br>
+## Python + ESPNetをオリジナルデータで学習する(データ生成編) 
+セマンティックセグメンテーションの中で軽いモデルであるESPNetv2を実装します．<br>
 本稿ではCityscapesデータセットから人のみを抽出して，仮のオリジナルデータで学習に向けて，データ生成を実施します．<br>
 今回はGoogle ColabとGoogle Driveを連携させて，notebook形式で実行してます．<br>
 

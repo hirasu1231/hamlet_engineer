@@ -1,17 +1,17 @@
 ---
-title: 'Python, ESPNetでCityscapesデータセットでSemantic Segmentationの学習を実施する'
-description: Python, ESPNetでCityscapesデータセットでSemantic Segmentationの学習を実施します．
+title: 'Python + ESPNetをCityscapesデータセットで学習する'
+description: Python + ESPNetでCityscapesデータセットでセマンティックセグメンテーションの学習を実施します．
 date: 2021-03-15
 category: Python
 tags:
   - Python
   - Jupyter
   - ESPNet
-  - Semantic Segmentation
+  - セマンティックセグメンテーション
 ---
 
-## Python, ESPNetでCityscapesデータセットでSemantic Segmentationの学習を実施する
-Semantic Segmentationの中で軽いモデルであるESPNetv2を実装します．本稿ではまず，デモの起動と公開データセットのCityscapesでの学習を実施します．<br>
+## Python + ESPNetをCityscapesデータセットで学習する
+セマンティックセグメンテーションの中で軽いモデルであるESPNetv2を実装します．本稿ではまず，デモの起動と公開データセットのCityscapesでの学習を実施します．<br>
 今回はGoogle ColabとGoogle Driveを連携させて，notebook形式で実行してます．<br>
 
 > Google Colaboratory（以下Google Colab）は、Google社が無料で提供している機械学習の教育や研究用の開発環境です。開発環境はJupyter Notebookに似たインターフェースを持ち、Pythonの主要なライブラリがプリインストールされています。<br>

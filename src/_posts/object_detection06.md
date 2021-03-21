@@ -1,5 +1,5 @@
 ---
-title: 'Python + Google Colab + keras-yolo4で学習でバイク検出を転移学習する'
+title: 'Python + Google Colab + keras-yolo4でバイク検出を転移学習する'
 description: COCOデータセットから特定のクラスの画像を抽出し，アノテーション情報を整形したので，keras-yolo4での転移学習を実施します．
 date: 2021-03-02
 category: Python
@@ -12,7 +12,7 @@ tags:
   - Google Colab
 ---
 
-# Python + Google Colab + keras-yolo4で学習でバイク検出を学習する
+# Python + Google Colab + keras-yolo4でバイク検出を転移学習する
 COCOデータセットから特定のクラスの画像を抽出し，アノテーション情報を整形したので，keras-yolo4での学習を実施します．<br>
 今回はGoogle ColabとGoogle Driveを連携させて，notebook形式で実行してます．<br>
 
