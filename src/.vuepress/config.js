@@ -185,7 +185,7 @@ module.exports = {
         nav: [
             { text: 'ホーム', link: '/', exact: true },
             { text: '記事検索', link: '/posts/', exact: false },
-            { text: '雑記', link: '/custom-pages/', exact: false },
+            { text: 'サイトマップ', link: '/custom-pages/', exact: false },
         ],
 
         // Enable smooth scrolling or not

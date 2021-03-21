@@ -1,82 +1,52 @@
 ---
 layout: CustomPages
-title: 企画
+title: サイトマップ
 aside: false
 ---
 
-# 企画
-ただ，知っていることをツラツラ書いていくのは僕が面白くないので，テキトーにこれやってみたいなという技術と企画をこのページでメモしています．<br>
-心がおれないようにざっくりとした工程とおきうる壁を書いています．
+# サイトマップ
 
-## 1月1日の郵便局のバイクをカウントする
-1月1日に郵便局から爆走するバイクを眺めるのが好きで，たまに左右に何台走ったかを計測したりします．しかし，たまに面倒になるので遊び半分で自動計測をしてみます．<br>
-`物体検出`,`転移学習`,`Yolo`,`SSD`
-- cocoのデータセットからバイクのみを抽出し，学習データの整理を実施する．
-- モデルはyolov4とEfficientDetの2つで比較．遊び要素．
-- 転移学習等の小手先も使う．
-
-### おきうる壁
-- cocoのダウンロードに時間がかかる.
-    - 全くコードとは関係ない別作業をする．並行してやると，また心が病む．
-- モデルのモジュールとCUDAの調整．
-    - Colabでやれば，勝手にリセットされるから心置きなくいじる．
-- google colabを使う予定だが，24時間で終了するか．
-     - 途中経過を捌けるようにする．
-- lossとmapの算出
-    - githubのissueで同志を見つける．
-- 転移学習等の学習手法の変化でモジュールとCUDAの調整．
-    - Colabでやれば，勝手にリセットされるから心置きなくいじる．
-- 2時間くらい同じエラーで苦しむww
-    - 山で愚痴を吐く
-
-## 初期デザインのキングギドラを再現
-アンパンマンよりゴジラを見て育った身としては，金色キングギドラより初期デザインの青色キングギドラを映像で見て楽しみたいです．そこで，CycleGANを使って青色キングギドラを生成したいと思います．<br>
-`CycleGAN`,`データ増殖`
-- キングギドラのデータ収集．
-- キングギドラのデータの水増し．
-- CycleGANの学習
-
-### おきうる壁
-- データ数が少ない．
-    - とにかく，データの水増しをしまくる．
-- 学習がうまくいかない．
-    - うまくいかない箇所のデータを自作するのは論外なので，学習手法を変更する．
-- 学習がうまくいかない．
-    - 数秒動いたシーンで妥協する．
-- 2時間くらい同じエラーで苦しむww
-    - 山で愚痴を吐く
-
-## DEMからの3Dマップの作成
-google map 3Dを作りたいなあ，ただそれだけ．<br>
-`GIS`
-
-## 骨格推定からMMDを作成
-実際の人間の動きを骨格推定を実施し，そのデータをMMDのCGに反映させる．
-`Openpose`
-
-## 声優さんの声を学習して，好きなセリフを喋らせる
-進撃の巨人のエルヴィンに下記の台詞を言わしたいので，音声関係の機械学習の勉強がてら実施する．下記の台詞はyoutubeのコメントにあった物です．<br>
-[【進撃の巨人】エルヴィン『兵士よ怒れ！兵士よ叫べ！！兵士よ戦え！！！』](https://www.youtube.com/watch?v=H13ID0ymOis)
-```init
-全くもって無意味だ．どんなに夢や希望を持っていても
-幸福な人生を送ることができたとしても
-毎月150時間以上の残業で過労死しても同じだ．人はいずれ死ぬ．
-ならば人生に意味はないのか．そもそも生まれてきた事に意味はなかったのか．
-退職していった仲間もそうなのか？
-あの社員達も、無意味だったのか？
-
-いや違う！！！あの社員，いや！兵士達に意味を与えるのは我々だ！！！
-あの勇敢な殉職者を！！哀れな退職者を！！想う事が出来るのは！！現職である我々だ！！
-我々はここで過労死するまで働き，次の社員に意味を託す！！！それこそ唯一！！！
-この残酷な社会に抗う術なのだ！！！！！
-兵士よ怒れぇ！！！
-兵士よ叫べぇ！！！！
-兵士よ働けぇぇえええ！！！！！
-```
-
-## DeepFaceをただ回すだけ
-ニュースで騒いでいたので，テキトーに回したい．
+## Vuepress
+[Vuepressで当ブログを作る](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/01/tech-0001.html)<br>
+[Vuepressで作成したブログをGithub Pagesで公開する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/02/tech-0002.html)<br>
+[Vuepressのフォントの設定とページメニューの追加](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/06/tech-0003.html)<br>
+[VuepressにSEO対策を実施します](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/19/tech-0004.html)<br>
 
 
-## リアルタイムで自分の声をゆっくりボイスに変換
-pix2pixでやった先人がいたので，違うモデルでやってみたい．
+## Python
+### OpenCV
+[Python, OpenCVで好きな動画ファイルからフレームを切り出して保存します](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/13/frame-mp4.html)<br>
+[Python, OpenCVで指定した色の抽出と別の色への置換を実装する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/16/color-replace.html)<br>
+
+### その他
+[CUDAとTensorFlow，PyTorchのversion対応について](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/21/cuda.html)<br>
+
+## ウェブスクレイピング
+[Python＋Docker＋Selenium＋Chromeでウェブスクレイピングする part1](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/11/websc-selenium01.html)<br>
+[Python＋Docker＋Selenium＋Chromeでウェブスクレイピングをする part2](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/12/websc-selenium02.html)<br>
+[Python＋Docker＋Selenium＋Chromeでウェブスクレイピングをする part3](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/13/websc-selenium03.html)<br>
+[Python＋Selenium＋ChromeでウェブスクレイピングしてYouTubeの動画をダウンロードする](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/15/websc-selenium04.html)<br>
+
+
+## 物体検出
+### データセット
+[COCOデータセットをダウンロードし，特定のクラスを抽出する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/21/object-detection01.html)<br>
+
+### Darknet(Yolov4)
+[COCOデータセットをDarknet(Yolov4)で学習できるように整形する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/22/object-detection02.html)<br>
+[Darknet(Yolov4)で学習させるためのcfgファイル等を作成する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/24/object-detection03.html)<br>
+[Python + Google Colab + Darknet(Yolov4)でバイク検出を学習する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/25/object-detection04.html)<br>
+[Python + Google Colab + yolov4-deepsortでバイクをカウントする](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/04/object-detection07.html)<br>
+
+### keras-yolo4
+[Python+ keras-yolo4で学習させるためにデータを整形する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/28/object-detection05.html)<br>
+[Python + Google Colab + keras-yolo4でバイク検出を転移学習する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/02/object-detection06.html)<br>
+
+## セマンティックセグメンテーション
+### ESPNet
+[Python + ESPNetをCityscapesデータセットで学習する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/15/segmentation01.html)<br>
+[Python + ESPNetをオリジナルデータで学習する(データ生成編) ](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/17/segmentation02.html)<br>
+[Python + ESPNetをオリジナルデータで学習する(学習編)](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/19/segmentation03.html)<br>
+
+## Nim
+[Nimが対応したJupyterLabをDockerでインストールする](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/20/nim.html)<br>
