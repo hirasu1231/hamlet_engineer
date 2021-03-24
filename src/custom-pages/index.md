@@ -47,6 +47,7 @@ aside: false
 [Python + ESPNetをCityscapesデータセットで学習する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/15/segmentation01.html)<br>
 [Python + ESPNetをオリジナルデータで学習する(データ生成編) ](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/17/segmentation02.html)<br>
 [Python + ESPNetをオリジナルデータで学習する(学習編)](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/19/segmentation03.html)<br>
+[Python + ESPNetでクロマキー合成を実施する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/24/segmentation04.html)<br>
 
 ## Nim
 [Nimが対応したJupyterLabをDockerでインストールする](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/20/nim.html)<br>
