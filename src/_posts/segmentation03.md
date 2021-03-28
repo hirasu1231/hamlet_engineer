@@ -10,7 +10,7 @@ tags:
   - セマンティックセグメンテーション
 ---
 
-## Python + ESPNetをオリジナルデータで学習する(学習編)
+# Python + ESPNetをオリジナルデータで学習する(学習編)
 セマンティックセグメンテーションの中で軽いモデルであるESPNetv2を実装します．<br>
 本稿ではCityscapesデータセットから人のみを抽出した仮のオリジナルデータで学習を実施します．<br>
 今回はGoogle ColabとGoogle Driveを連携させて，notebook形式で実行してます．<br>

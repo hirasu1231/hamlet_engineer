@@ -10,7 +10,7 @@ tags:
   - セマンティックセグメンテーション
 ---
 
-## Python + ESPNetをCityscapesデータセットで学習する
+# Python + ESPNetをCityscapesデータセットで学習する
 セマンティックセグメンテーションの中で軽いモデルであるESPNetv2を実装します．本稿ではまず，デモの起動と公開データセットのCityscapesでの学習を実施します．<br>
 今回はGoogle ColabとGoogle Driveを連携させて，notebook形式で実行してます．<br>
 
