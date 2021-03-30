@@ -5,7 +5,6 @@ aside: false
 ---
 
 # サイトマップ
-
 ## Vuepress
 [Vuepressで当ブログを作る](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/01/tech-0001.html)<br>
 [Vuepressで作成したブログをGithub Pagesで公開する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/02/tech-0002.html)<br>
@@ -48,6 +47,11 @@ aside: false
 [Python + ESPNetをオリジナルデータで学習する(データ生成編) ](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/17/segmentation02.html)<br>
 [Python + ESPNetをオリジナルデータで学習する(学習編)](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/19/segmentation03.html)<br>
 [Python + ESPNetでクロマキー合成を実施する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/24/segmentation04.html)<br>
+
+## GAN
+### CycleGan
+[Python + CycleGanで茶毛のウマをシマウマに変換する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/28/cyclegan01.html)<br>
+[# Python + CycleGanでオリジナルデータでの学習を実装する](https://hirasu1231.github.io/hamlet_engineer/posts/2021/03/29/cyclegan02.html)<br>
 
 ## Nim
 [Nimが対応したJupyterLabをDockerでインストールする](https://hirasu1231.github.io/hamlet_engineer/posts/2021/02/20/nim.html)<br>
