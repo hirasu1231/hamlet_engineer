@@ -11,34 +11,5 @@ tags:
 # Nimが対応したJupyterLabをDockerでインストールする
 Nimが扱えるJupyterLabをDockerにインストールします．
 
-## インストール
-[tsutomu7/nim](https://hub.docker.com/r/tsutomu7/nim/)のイメージをdocker-composeでPullします．<br>
-僕はdocker-compose.ymlを以下のように記述しました．
-```
-version: "3"
-services:
-  jupyter:
-    image: tsutomu7/nim:latest
-    # user: root
-    volumes:
-      - ./:/root/work
-    ports:
-      - "88:8888" # for Jupyterlab
-```
-コンテナが立ち上がったら http://localhost:88/ にアクセスすると Jupyter Lab が開きます．<br>
-```
-$ mkdir jupyter-nim
-$ cd jupyter-nim
-$ touch docker-compose.yml
-# 中身記述後
-$ docker-compose up
-```
-
-## まとめ
-Nimが扱えるJupyterLabをDockerにインストールしました．<br>
-あとは，少しずつ遊んでいきます．
-
-## 参考サイト
-[Jupyterでnimを使おう](https://qiita.com/SaitoTsutomu/items/f79257430e2d8fcb9196)<br>
-[tsutomu7/nim](https://hub.docker.com/r/tsutomu7/nim/)<br>
-[Jupyter notebookでNimを使い，グラフの可視化まで](https://qiita.com/SatoshiTerasaki/items/281c578c47f8ee497f3c)
+## 新しいサイトに移行しました
+<blockquote class="blogcard" style="width:auto;border:1px solid #aaa;margin:1em 0;padding:1em;line-height:1.4;text-align:left;background:#fff;"><a href="https://www.hamlet-engineer.com/posts/nim.html" target="_blank" style="display:block;text-decoration:none;"><div style="width:100%;margin:0 0 .5em;"><span style="font-size:18px;font-weight:700;color:#333">Nimが対応したJupyterLabをDockerでインストールする</span></div><div style="min-height:150px;"><div style="float:left;width:150px;height:150px;margin:0 .5em;position:relative;"><img src="https://images.weserv.nl/?w=150&url=https://www.hamlet-engineer.com/image/nim.png" alt="thumbnail" style="display:block;margin:0;padding:0;width:100%;height:auto;border:none;position:absolute;top:50%;transform:translateY(-50%);"/></div><div style="padding:0 .5em;overflow:hidden;text-overflow:ellipsis;"><span style="font-size:14px;font-weight:400;color:#666">Nimが扱えるJupyterLabをDockerにインストールします．</span><br/><span style="font-size:12px;font-weight:400;color:#373">https://www.hamlet-engineer.com/posts/nim.html</span></div></div></a></blockquote>
